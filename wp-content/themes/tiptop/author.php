@@ -1,8 +1,6 @@
 <?php
 /**
  * Страница автора (author.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 get_header(); // подключаем header.php ?> 
 <section>

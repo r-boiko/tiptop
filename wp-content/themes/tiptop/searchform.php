@@ -1,8 +1,6 @@
 <?php
 /**
  * Шаблон формы поиска (searchform.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 ?>
 <form role="search" method="get" class="search-form form-inline" action="<?php echo home_url( '/' ); ?>">

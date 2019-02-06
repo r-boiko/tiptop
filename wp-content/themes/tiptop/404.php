@@ -1,8 +1,6 @@
 <?php
 /**
  * Страница 404 ошибки (404.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 get_header(); // Подключаем header.php ?>
 <section>

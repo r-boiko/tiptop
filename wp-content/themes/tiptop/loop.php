@@ -1,8 +1,6 @@
 <?php
 /**
  * Запись в цикле (loop.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */ 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>> <?php // контэйнер с классами и id ?>

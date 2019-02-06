@@ -1,8 +1,6 @@
 <?php
 /**
  * Функции шаблона (function.php)
- * @package WordPress
- * @subpackage your-clean-template-3
  */
 
 add_theme_support('title-tag'); // теперь тайтл управляется самим вп
@@ -91,13 +89,25 @@ if (!function_exists('pagination')) { // если ф-я уже есть в до�
 	}
 }
 
+/* Подключение jquery */
+function my_init() {
+    if (!is_admin()) {
+        wp_deregister_script('jquery');
+        wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('init', 'my_init');
+
 add_action('wp_footer', 'add_scripts'); // приклеем ф-ю на добавление скриптов в футер
 if (!function_exists('add_scripts')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
 	function add_scripts() { // добавление скриптов
 	    if(is_admin()) return false; // если мы в админке - ничего не делаем
-	    wp_deregister_script('jquery'); // выключаем стандартный jquery
-	    wp_enqueue_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true); // добавляем свой
+//	    wp_deregister_script('jquery'); // выключаем стандартный jquery
+//	    wp_enqueue_script('jquery','//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js','','',true); // добавляем свой
 	    wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.min.js','','',true); // бутстрап
+	    wp_enqueue_script('slick', get_template_directory_uri().'/js/slick.min.js','','',true); // slick
+	    wp_enqueue_script('validate', get_template_directory_uri().'/js/jquery.validate.min.js','','',true); // validate
 	    wp_enqueue_script('main', get_template_directory_uri().'/js/main.js','','',true); // и скрипты шаблона
 	}
 }
@@ -106,8 +116,10 @@ add_action('wp_print_styles', 'add_styles'); // приклеем ф-ю на до
 if (!function_exists('add_styles')) { // если ф-я уже есть в дочерней теме - нам не надо её определять
 	function add_styles() { // добавление стилей
 	    if(is_admin()) return false; // если мы в админке - ничего не делаем
-	    wp_enqueue_style( 'bs', get_template_directory_uri().'/css/bootstrap.min.css' ); // бутстрап
-		wp_enqueue_style( 'main', get_template_directory_uri().'/style.css' ); // основные стили шаблона
+//	    wp_enqueue_style( 'bs', get_template_directory_uri().'/css/bootstrap.min.css' ); // бутстрап
+	    wp_enqueue_style( 'slick', get_template_directory_uri().'/css/slick.css' ); // slick
+	    wp_enqueue_style( 'main', get_template_directory_uri().'/css/main.css' ); // main
+		wp_enqueue_style( 'style', get_template_directory_uri().'/style.css' ); // основные стили шаблона
 	}
 }
 
