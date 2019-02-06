@@ -237,4 +237,11 @@ remove_action('load-update-core.php', 'wp_update_plugins');
 add_filter('pre_site_transient_update_plugins', create_function('$a', "return null;"));
 wp_clear_scheduled_hook('wp_update_plugins');
 
+// add class a into menu
+function add_menuclass($ulclass)
+{
+    return preg_replace('/<a /', '<a class="text-link" ', $ulclass);
+}
+add_filter('wp_nav_menu', 'add_menuclass');
+
 ?>

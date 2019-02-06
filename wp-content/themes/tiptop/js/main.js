@@ -158,8 +158,11 @@
 			}
 		});
 
-
-
+		// wpcf7mailsent
+        var wpcf7Elm = document.querySelector( '.wpcf7' );
+        wpcf7Elm.addEventListener( 'wpcf7mailsent', function() {
+            $('form .close').trigger('click');
+        }, false );
 	
 	});
 }) (jQuery);

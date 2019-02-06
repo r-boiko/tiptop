@@ -3,24 +3,6 @@
  * Шаблон подвала (footer.php)
  */
 ?>
-<!--	<footer>-->
-<!--		<div class="container">-->
-<!--			<div class="row">-->
-<!--				<div class="col-md-12">-->
-<!--					--><?php //$args = array( // опции для вывода нижнего меню, чтобы они работали, меню должно быть создано в админке
-//						'theme_location' => 'bottom', // идентификатор меню, определен в register_nav_menus() в function.php
-//						'container'=> false, // обертка списка, false - это ничего
-//						'menu_class' => 'nav nav-pills bottom-menu', // класс для ul
-//				  		'menu_id' => 'bottom-nav', // id для ul
-//				  		'fallback_cb' => false
-//				  	);
-//					wp_nav_menu($args); // выводим нижние меню
-//					?>
-<!--				</div>-->
-<!--			</div>-->
-<!--		</div>-->
-<!--	</footer>-->
-
 
 <footer class="footer">
     <div class="container">
@@ -31,12 +13,15 @@
                     <p class="subp">Уже подписались около 15&nbsp;000 пользователей</p>
                 </div>
                 <div class="col-lg-5 offset-xl-1">
-                    <form class="subscribe-form" id="subscribe-form">
-                        <div class="input-wrapper flx">
-                            <input type="text" class="field" name="user_name">
-                            <button type="submit" class="bttn green-btn">Отправить</button>
-                        </div>
-                    </form>
+<!--                    <form class="subscribe-form" id="subscribe-form">-->
+<!--                        <div class="input-wrapper flx">-->
+<!--                            <input type="text" class="field" name="user_name">-->
+<!--                            <button type="submit" class="bttn green-btn">Отправить</button>-->
+<!--                        </div>-->
+<!--                    </form>-->
+                    <div class="subscribe-form" id="subscribe-form">
+                        <?php echo do_shortcode('[contact-form-7 id="12" title="Подписка на обновления"]'); ?>
+                    </div>
                 </div>
             </div>
         </div>
@@ -98,25 +83,7 @@
 </footer>
 
 <!-- modals -->
-<div class="modal fade" id="order-call" tabindex="-1" role="dialog" aria-labelledby="order-call-title" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2 class="modal-title" id="order-call-title">Заказать звонок</h2>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form class="modal-form" id="modal-form">
-                    <input type="text" name="user_name" class="field in-form" placeholder="Имя">
-                    <input type="tel" name="user_tel" class="field in-form" placeholder="Телефон">
-                    <button type="submit" class="bttn green-btn in-form">Отправить</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
+ <?php echo do_shortcode('[contact-form-7 id="11" title="Заказать звонок"]'); ?>
 <!-- </modals -->
 
 <?php wp_footer(); // необходимо для работы плагинов и функционала  ?>
