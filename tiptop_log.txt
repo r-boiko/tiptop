@@ -1,0 +1,2 @@
+login: admin
+pass: I$cZYyQq1Px&IQro@c
