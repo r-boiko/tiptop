@@ -9247,7 +9247,7 @@ label.error, .wpcf7-not-valid-tip {
       -webkit-transition: 0.3s ease;
       -o-transition: 0.3s ease;
       transition: 0.3s ease; }
-    #subscribe-form .screen-reader-response{
+    .wpcf7 .screen-reader-response{
       display: none;
     }
     #subscribe-form .wpcf7-mail-sent-ok{

@@ -2,7 +2,7 @@
 /**
  * Шаблон шапки (header.php)
  */
-?>
+$home_id = 5; ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); // вывод атрибутов языка ?>>
 <head>
@@ -37,7 +37,7 @@
         <div class="container">
             <div class="row align-items-center posr">
                 <div class="col-6 col-lg-3">
-                    <a href="/"><img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="logo"></a>
+                    <a href="/"><img src="<?php echo get_field('logo_header', $home_id); ?>" alt="logo"></a>
                 </div>
                 <div class="col-lg-6 top-menu__wrapper">
                     <nav class="top-menu text-right text-lg-center">

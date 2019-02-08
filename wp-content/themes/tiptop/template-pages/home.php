@@ -6,7 +6,8 @@
  * Time: 13:31
  * Template Name: Home
  */
-get_header(); // подключаем header.php ?>
+get_header(); // подключаем header.php
+$page_id = get_the_ID(); ?>
 
     <main>
         <section class="typical-section">
@@ -15,12 +16,10 @@ get_header(); // подключаем header.php ?>
                     <div class="col-12">
                         <div class="text-section">
                             <div class="img-wrapper aside-right w5-12">
-                                <img src="<?php echo get_template_directory_uri(); ?>/img/img1.jpg" alt="">
+                                <img src="<?php echo get_field('image_home', $page_id); ?>" alt="">
                             </div>
-                            <h2>Почему именно мы?</h2>
-                            <p>Повседневная практика показывает, что новая модель организационной деятельности играет важную роль в формировании направлений прогрессивного развития. Повседневная практика показывает, что постоянный количественный рост и сфера нашей активности требуют определения и уточнения систем массового участия. Разнообразный и богатый опыт начало повседневной работы по формированию позиции представляет собой интересный эксперимент проверки дальнейших направлений развития. Таким образом сложившаяся структура организации способствует подготовки и реализации соответствующий условий активизации. Разнообразный и богатый опыт сложившаяся структура организации в значительной степени обуславливает создание дальнейших направлений развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание дальнейших направлений развития.</p>
-                            <p>Товарищи! укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании форм развития. Таким образом реализация намеченных плановых заданий влечет за собой процесс внедрения и модернизации направлений прогрессивного развития.Равным образом сложившаяся структура организации способствует подготовки и реализации направлений прогрессивного развития. Повседневная практика показывает, что постоянное информационно-пропагандистское обеспечение нашей деятельности в значительной степени обуславливает создание дальнейших направлений развития.</p>
-                            <p>Товарищи! постоянное информационно-пропагандистское обеспечение нашей деятельности влечет за собой процесс внедрения и модернизации форм развития. Идейные соображения высшего порядка, а также дальнейшее развитие различных форм деятельности в значительной степени обуславливает создание систем массового участия. Разнообразный и богатый опыт рамки и место обучения кадров позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Идейные соображения высшего порядка, а также постоянный количественный рост и сфера нашей активности позволяет оценить значение существенных финансовых и административных условий. Таким образом сложившаяся структура организации представляет собой интересный эксперимент проверки новых предложений. Значимость этих проблем настолько очевидна, что сложившаяся структура организации влечет за собой процесс внедрения и модернизации позиций занимаемых участниками в отношении поставленных задач.</p>
+                            <h2><?php echo get_field('title_home', $page_id); ?></h2>
+                            <?php echo get_field('description_home', $page_id); ?>
                         </div>
                     </div>
                 </div>
@@ -30,78 +29,30 @@ get_header(); // подключаем header.php ?>
             <div class="container">
                 <h3 class="mb">Выбери свой продукт</h3>
                 <div class="row tabs">
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>SEO продвижение</h5>
-                                <p>Комплекс мер для повышения	позиций&nbsp;сайта.</p>
+                    <?php
+
+                    $query = new WP_Query( 'cat=3' );
+                    if( $query->have_posts() ){
+                        while( $query->have_posts() ){
+                            $query->the_post();
+                            ?>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="tab flx flex-wrap flx-align-cont-sbtw">
+                                    <div class="text-elem">
+                                        <h5><?php the_title(); ?></h5>
+                                        <p><?php the_field('sub_title'); ?></p>
+                                    </div>
+                                    <button type="button" class="black-btn"><a href="<?php the_permalink(); ?>">Выбрать услугу</a></button>
+                                    <?php the_field('svg'); ?>
+                                </div>
                             </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image1"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>Оптимизация сайта</h5>
-                                <p>Комплекс мер по обеспечению посещаемости сайта.</p>
-                            </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image2"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>Контекстная реклама</h5>
-                                <p>Тип интернет-рекламы, при котором рекламное объявление показывается в соответствии с содержанием, контекстом интернет-страницы.</p>
-                            </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image3"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>Создание сайта под ключ</h5>
-                                <p>Не только дизайн и верстка, но еще и грамотная SEO-оптимизация.</p>
-                            </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image4"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>SERM</h5>
-                                <p>Технология по созданию, изменению и	эффективному управлению репутацией компании в интернете.</p>
-                            </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image5"></use>
-                            </svg>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <div class="tab flx flex-wrap flx-align-cont-sbtw">
-                            <div class="text-elem">
-                                <h5>SMM</h5>
-                                <p>Продвижение товаров и услуг в социальных сетях.</p>
-                            </div>
-                            <button type="button" class="black-btn">Выбрать услугу</button>
-                            <svg class="svg-icon">
-                                <use xlink:href="#icon-image6"></use>
-                            </svg>
-                        </div>
-                    </div>
+                            <?php
+                        }
+                        wp_reset_postdata();
+                    }
+                    else
+                        echo 'Записей нет.';
+                    ?>
                 </div>
             </div>
         </section>
