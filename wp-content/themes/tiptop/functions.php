@@ -94,7 +94,7 @@ if (!function_exists('pagination')) { // если ф-я уже есть в до�
 function my_init() {
     if (!is_admin()) {
         wp_deregister_script('jquery');
-        wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', true);
+        wp_register_script('jquery', get_template_directory_uri().'/js/jquery.min.js', false, '', false);
         wp_enqueue_script('jquery');
     }
 }
