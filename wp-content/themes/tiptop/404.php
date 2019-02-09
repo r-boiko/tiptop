@@ -3,15 +3,14 @@
  * Страница 404 ошибки (404.php)
  */
 get_header(); // Подключаем header.php ?>
-<section>
-	<div class="container">
-		<div class="row">
-			<div class="<?php content_class_by_sidebar(); // функция подставит класс в зависимости от того есть ли сайдбар, лежит в functions.php ?>">
-				<h1>Ой, это 404!</h1>
-				<p>Блаблабла 404 Блаблабла</p>
-			</div>
-			<?php get_sidebar(); // подключаем sidebar.php ?>
-		</div>
-	</div>
-</section>
+    <section class="typical-section">
+        <div class="container">
+            <div class="row align-items-center contacts">
+                <div class="text-section var">
+                    <h2>Ошибка 404</h2>
+                    <p><a href="/">На главную</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php get_footer(); // подключаем footer.php ?>
