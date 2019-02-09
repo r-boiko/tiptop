@@ -91,7 +91,6 @@ get_header(); // подключаем header.php; ?>
                                 <img src="<?php the_field('smm_about_first_image'); ?>" alt="">
                             </div>
                             <p class="cat-name">Подробнее</p>
-                            <h2><?php the_title(); ?></h2>
                             <?php the_field('smm_about_first_decsription'); ?>
                         </div>
                     </div>

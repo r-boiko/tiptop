@@ -94,7 +94,6 @@ get_header(); // подключаем header.php; ?>
                             <div class="img-wrapper aside-left w5-12">
                                 <img src="<?php the_field('image_post'); ?>" alt="">
                             </div>
-                            <h2><?php the_title(); ?></h2>
                             <?php the_field('text_post'); ?>
                         </div>
                     </div>

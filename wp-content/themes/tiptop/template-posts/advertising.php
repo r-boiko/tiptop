@@ -28,7 +28,6 @@ get_header(); // подключаем header.php; ?>
                 <div class="row">
                     <div class="col-12">
                         <div class="text-section">
-                            <h2><?php the_title(); ?></h2>
                             <?php while ( have_rows('content_block') ) : the_row(); ?>
                                 <div class="img-wrapper aside-right w7-12">
                                     <img src="<?php the_sub_field('content_block_image'); ?>" alt="">

@@ -4269,7 +4269,7 @@ input[type="button"].btn-block {
   color: #007bff;
   background-color: #fff;
   border: 1px solid #dee2e6; }
-  .page-link:hover {
+  .page-link:hover, .pagination a:hover {
     z-index: 2;
     color: #0056b3;
     text-decoration: none;
@@ -8394,7 +8394,7 @@ label.error, .wpcf7-not-valid-tip {
   font-size: 14px;
   -webkit-border-radius: 0;
           border-radius: 0; }
-  .pagination .page-link {
+  .pagination .page-link, .pagination a, .pagination span {
     color: #6e6e6e;
     line-height: 1;
     padding: 10px;
@@ -8406,7 +8406,8 @@ label.error, .wpcf7-not-valid-tip {
   .pagination .page-item:first-child .page-link, .pagination .page-item:last-child .page-link {
     -webkit-border-radius: 0;
             border-radius: 0; }
-  .pagination .page-item.active .page-link {
+  .pagination .page-item.active .page-link, .pagination li.active span {
+    color: #fff;
     background-color: #53b374;
     border-color: #53b374; }
   .pagination .page-item.disabled .page-link {

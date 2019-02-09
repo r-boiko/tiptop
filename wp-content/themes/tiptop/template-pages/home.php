@@ -46,7 +46,6 @@ $page_id = get_the_ID(); ?>
                             <div class="img-wrapper aside-right w5-12">
                                 <img src="<?php echo get_field('image_home', $page_id); ?>" alt="">
                             </div>
-                            <h2><?php echo get_field('title_home', $page_id); ?></h2>
                             <?php echo get_field('description_home', $page_id); ?>
                         </div>
                     </div>

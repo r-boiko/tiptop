@@ -74,7 +74,6 @@ get_header(); // подключаем header.php; ?>
                             <div class="img-wrapper aside-left w5-12">
                                 <img src="<?php the_field('image_post'); ?>" alt="">
                             </div>
-                            <h2>Сайт под ключ</h2>
                             <?php the_field('description_post'); ?>
                         </div>
                     </div>
