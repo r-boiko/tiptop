@@ -8277,7 +8277,7 @@ textarea.field {
   padding: 15px;
   resize: none; }
 
-button.in-form, #order-call input[type="submit"] {
+button.in-form, #order-call input[type="submit"], .contact-btn {
   -webkit-transition: 0.5s ease;
   -o-transition: 0.5s ease;
   transition: 0.5s ease;

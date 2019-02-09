@@ -59,7 +59,7 @@ $cat_ID = get_query_var('cat'); if($cat_ID == 3) { ?>
                         </nav>
                     </div>
                     <div class="col-md-6 text-right">
-                        <h1><?php single_cat_title(); // название категории ?></h1>
+                        <h1>ПОСЛЕДНИЕ НОВОВОВВЕДЕНИЯ</h1>
                     </div>
                 </div>
             </div>
